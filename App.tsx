@@ -10,6 +10,8 @@ export default function App() {
   const [Description, setDescription] = useState ('');
   const [Course, setCourse] = useState('stater');
   const [price, setPrice] = useState('');
+  // Author: The Independent Institute of Education
+  // Mobile App Scripting MAST5112/p/w Module Manual 2025.,p20-
 
   return (
     <View style={styles.Container}>
@@ -19,17 +21,22 @@ export default function App() {
         <Image style={styles.imageSize}
         source={require('./img/culinaryapp.jpg')} />
       </View>
+      // Author: The Independent Institute of Education
+     // Mobile App Scripting MAST5112/p/w Module Manual 2025.,p20-
 
       <Text style={styles.welcomeText}> 🍽️ ChristOffel Menu</Text>
 
       <TextInput style={styles.menudetails} placeholder='Dish Name:' placeholderTextColor="#e0f0ff" onChangeText={newText=> setDishname(newText)} />
       <TextInput style={styles.menudetails} placeholder='Description:' placeholderTextColor="#e0f0ff" onChangeText={newText=> setDescription(newText)} />
+      // Author: The Independent Institute of Education
+      // Mobile App Scripting MAST5112/p/w Module Manual 2025.,p20-
       
       <View style={styles.Viewcourse}>
 
         <Text style={styles.courselist}> Choose a course: </Text>
 
         // Here is a picker to allow the Chef to choose a course of his choice
+
         <Picker style= {styles.picker}
         selectedValue={Course}
         onValueChange={(itemValue) => setCourse(itemValue)}
@@ -38,16 +45,22 @@ export default function App() {
         <Picker.Item label="Main" value="main" />
         <Picker.Item label="Dessert" value="dessert" />
         </Picker>
+        // OpenAI (2025) ChatGPT [Computer program]. 
+        Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/ (Accessed: 29 April 2025).
       </View>
 
       <TextInput style={styles.menudetails} 
       placeholder='Price:' placeholderTextColor="#e0f0ff" onChangeText={newText=> setPrice(newText)} value={price}
       keyboardType='numeric' />
+      // OpenAI (2025) ChatGPT [Computer program]. 
+      Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/ (Accessed: 29 April 2025).
 
      // Button needed for saving and allowing the screen to display the list/menu created by the Chef
      <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Add items!</Text>
       </TouchableOpacity>
+      // OpenAI (2025) ChatGPT [Computer program]. 
+      Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/ (Accessed: 29 April 2025).
 
       <StatusBar style="auto" />
     </View>
