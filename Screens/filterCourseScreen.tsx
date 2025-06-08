@@ -1,4 +1,4 @@
-// screens/FilterCourseScreen.tsx
+// FilterCourseScreen.tsx
 import React, { useState, useContext } from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
 import { MenuContext } from '../Context/menuContext';
@@ -13,8 +13,8 @@ export default function FilterCourseScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Filter by Course</Text>
-      <Picker selectedValue={selectedCourse} onValueChange={setSelectedCourse} style={styles.picker}>
+      <Text style={styles.welcomeText3}>Filter by Course</Text>
+      <Picker selectedValue={selectedCourse} onValueChange={setSelectedCourse} style={styles.picker2}>
         <Picker.Item label="Starter" value="starter" />
         <Picker.Item label="Main" value="main" />
         <Picker.Item label="Dessert" value="dessert" />
@@ -35,8 +35,30 @@ export default function FilterCourseScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
-  title: { fontSize: 20, fontWeight: 'bold' },
-  picker: { marginVertical: 10 },
-  itemBox: { padding: 10, backgroundColor: '#eee', marginVertical: 5 },
+  container: {
+    flex: 1,
+    backgroundColor: '#f9c74f',
+  },
+
+  welcomeText3: {  
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 32,
+    marginVertical: 20,
+    textAlign : 'center'
+  },
+  picker2: {
+    height: 50,
+    width: '100%',
+    backgroundColor: '#A3C1D1',
+    color: '#fff',
+    borderRadius: 10,
+  },
+  itemBox: { 
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 10,
+    marginVertical: 8,
+    width:'100%'
+ },
 });
