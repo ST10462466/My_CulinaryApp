@@ -12,8 +12,8 @@ import { commonStyles } from '../buttonStyles/commonStyles';
 
 
 type HomeScreenProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'HomeScreen'>;
-  route: RouteProp<RootStackParamList, 'HomeScreen'>;
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
+  route: RouteProp<RootStackParamList, 'Home'>;
 };
 
 export default function HomeScreen({ navigation }: HomeScreenProps) {
