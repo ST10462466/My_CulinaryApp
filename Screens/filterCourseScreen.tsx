@@ -34,6 +34,8 @@ export default function FilterCourseScreen() {
     </View>
   );
 }
+// OpenAI (2025) ChatGPT [Computer program]. 
+// Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/(Accessed: 09 June 2025).
 
 const styles = StyleSheet.create({
   container: {

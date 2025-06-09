@@ -13,6 +13,8 @@ export default function AddItemScreen() {
   const [course, setCourse] = useState('starter');
   const [price, setPrice] = useState('');
   const [error, setError] = useState('');
+// OpenAI (2025) ChatGPT [Computer program]. 
+// Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/(Accessed: 09 June 2025).
 
   // validate function
   const handleAdd = () => {
@@ -57,7 +59,8 @@ export default function AddItemScreen() {
       <TouchableOpacity style={styles.addbutton} onPress={handleAdd}>
       <Text style={styles.addbuttonText}>Add Dish!</Text>
       </TouchableOpacity>
-
+      // OpenAI (2025) ChatGPT [Computer program]. 
+      // Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/(Accessed: 09 June 2025).
 
 
       <FlatList
@@ -69,12 +72,14 @@ export default function AddItemScreen() {
       <TouchableOpacity style={styles.removebutton} onPress={() => removeItem(item.id)}>
       <Text style={styles.removebuttonText}>Remove</Text>
       </TouchableOpacity>
-          
+      
         )}
       />
     </View>
   );
 }
+// OpenAI (2025) ChatGPT [Computer program]. 
+// Available at: https://chatgpt.com/c/680fa219-90fc-8004-8367-87687708a9be/(Accessed: 09 June 2025).
 
 const styles = StyleSheet.create({
   container: {
