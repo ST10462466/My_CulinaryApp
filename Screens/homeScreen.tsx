@@ -1,24 +1,24 @@
-//HomeScreen.tsx
+//imports for the first screen "homeScreen"
 import React, { useContext } from 'react';
-import { View, Text, TouchableOpacity, Image, FlatList, StyleSheet, ScrollView } from 'react-native';
+import { FlatList, Image, Text, TouchableOpacity, ScrollView, StyleSheet, View } from 'react-native';
 import { MenuContext } from '../Context/menuContext';
-import MenuItemCard from '../Components/menuItemCard';
+import MenuDetails from '../Components/menuDetails';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RouteProp } from '@react-navigation/native';
-// At the top of screens/HomeScreen.tsx
-import { RootStackParamList } from '../types';
-import { commonStyles } from '../buttonStyles/commonStyles';
+import { RootStackParamList } from '../types'; 
 
 
-
+// props that this screen receives are defined here : navigate and contain any parameter passed in here
 type HomeScreenProps = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Home'>;
   route: RouteProp<RootStackParamList, 'Home'>;
 };
 
+// main function for this screen declared 
 export default function HomeScreen({ navigation }: HomeScreenProps) {
   const { menuItems } = useContext(MenuContext)!;
 
+// average price function and calculation
   const averagePriceByCourse = (course: string) => {
     const filtered = menuItems.filter((item) => item.course === course);
     if (filtered.length === 0) return '0.00';
@@ -38,7 +38,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
       // Author: The Independent Institute of Education
     // Mobile App Scripting MAST5112/p/w Module Manual 2025.,p20-
 
-
+      // UI of this screen defined
       <Text style={styles.welcomeText}>🍽️ ChristOffel Menu</Text>
       <Text>Total Items: {menuItems.length}</Text>
       <Text>Average Price - Starter: {averagePriceByCourse('starter')} ZAR</Text>
@@ -46,14 +46,14 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
       <Text>Average Price - Dessert: {averagePriceByCourse('dessert')} ZAR</Text>
 
     <TouchableOpacity
-    style={commonStyles.button}
+    style={styles.button}
     onPress={() => navigation.navigate('AddItemScreen')}
     >
       <Text style={styles.buttonText}>Add Item!</Text>
     </TouchableOpacity>
 
     <TouchableOpacity
-      style={commonStyles.button}
+      style={styles.button}
       onPress={() => navigation.navigate('FilterCourseScreen')}
     >
       <Text style={styles.buttonText}>Filter by Course</Text>
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
       <FlatList
         data={menuItems}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <MenuItemCard item={item} />}
+        renderItem={({ item }) => <MenuDetails item={item} />}
       />
       
       </ScrollView>
@@ -75,7 +75,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
 
 const styles = StyleSheet.create({
   
-  // styling the big view/screen
+  // styling the main view of this screen
   container: {
     flex: 1,
     backgroundColor: '#f9c74f',
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     padding: 20,
     alignItems: 'center',
   },
-  // styling the image part and its view for this app
+  // styling the image part and its view for this screen
   Picture: { 
     justifyContent : 'center', 
     alignItems : 'center',
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
 
  
-  // styling all the text side of this app
+  // styling the main text of this screen
   welcomeText: {  
     color: '#fff',
     fontWeight: 'bold',
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     textAlign : 'center'
   },
 
+  // styling the text and button side of this screen
   button: {
     backgroundColor: '#ACE1AF',
     paddingVertical: 12,

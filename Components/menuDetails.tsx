@@ -1,9 +1,9 @@
-// components/MenuItemCard.tsx
+// This file is all about the details of the menu and the general UI of them
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MenuItem } from '../Context/menuContext';
 
-export default function MenuItemCard({ item }: { item: MenuItem }) {
+export default function MenuDetails({ item }: { item: MenuItem }) {
   return (
     <View style={styles.card}>
       <Text style={styles.name}>{item.dishname}</Text>
@@ -15,6 +15,6 @@ export default function MenuItemCard({ item }: { item: MenuItem }) {
 }
 
 const styles = StyleSheet.create({
-  card: { backgroundColor: '#fff', padding: 10, marginVertical: 5, borderRadius: 5 },
+  card: { backgroundColor: '#ACE1AF', padding: 10, marginVertical: 5, borderRadius: 5 },
   name: { fontWeight: 'bold' },
 });

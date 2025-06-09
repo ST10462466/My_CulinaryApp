@@ -1,4 +1,4 @@
-// FilterCourseScreen.tsx
+//imports for the first screen "FilterCourseScreen"
 import React, { useState, useContext } from 'react';
 import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
 import { MenuContext } from '../Context/menuContext';
@@ -9,6 +9,7 @@ export default function FilterCourseScreen() {
   const { menuItems, removeItem } = useContext(MenuContext)!;
   const [selectedCourse, setSelectedCourse] = useState('starter');
 
+  // Filters the full list of menu items so only items matching the selected course are shown.
   const filtered = menuItems.filter((item) => item.course === selectedCourse);
 
   return (
